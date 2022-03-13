@@ -5,7 +5,7 @@ const middleware=jsonServer.defaults({
     static:"./build",
 });
 const cors=require("cors")
-const port=5000;
+const port=process.env.PORT || 5000;
 server.use(middleware);
 server.use(jsonServer.rewriter({
     "/api/*":"/$1",
